@@ -1,0 +1,31 @@
+# ⒸAngelaMos | 2025
+# timer.service
+#
+# Systemd user service for running timer in background
+#
+# Install:
+#   mkdir -p ~/.config/systemd/user
+#   cp timer.service ~/.config/systemd/user/
+#   systemctl --user daemon-reload
+#   systemctl --user enable timer
+#   systemctl --user start timer
+#
+# Commands:
+#   systemctl --user status timer   # check status
+#   systemctl --user stop timer     # stop
+#   systemctl --user restart timer  # restart
+#   journalctl --user -u timer -f   # view logs
+
+[Unit]
+Description=Stopwatch Timer
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/yoshi/dev/timer-go
+ExecStart=/home/yoshi/dev/timer-go/timer
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=default.target

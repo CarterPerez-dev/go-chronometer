@@ -1,0 +1,17 @@
+# ⒸAngelaMos | 2025
+# timer.desktop
+#
+# Desktop shortcut - Install:
+#   cp timer.desktop ~/.local/share/applications/
+#   update-desktop-database ~/.local/share/applications/
+
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Timer
+Comment=Persistent Stopwatch Timer
+Exec=/home/yoshi/dev/timer-go/timer
+Path=/home/yoshi/dev/timer-go
+Terminal=false
+Categories=Utility;
+StartupNotify=false
